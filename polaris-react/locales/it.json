@@ -19,7 +19,7 @@
         "success": "Operazione riuscita",
         "warning": "Avvertimento",
         "attention": "Attenzione",
-        "new": "Nuovo",
+        "new": "Nuova",
         "critical": "Critico",
         "readOnly": "Sola lettura",
         "enabled": "Abilitato"
@@ -213,6 +213,7 @@
         "rename": "Rinomina vista",
         "duplicate": "Duplica vista",
         "edit": "Modifica vista",
+        "editColumns": "Modifica colonne",
         "delete": "Elimina vista",
         "copy": "Copia di {name}",
         "deleteModal": {
@@ -336,7 +337,7 @@
     "IndexTable": {
       "emptySearchTitle": "Impossibile trovare {resourceNamePlural}",
       "emptySearchDescription": "Prova a cambiare i filtri o il termine di ricerca",
-      "onboardingBadgeText": "Novità",
+      "onboardingBadgeText": "Nuova",
       "resourceLoadingAccessibilityLabel": "Caricamento {resourceNamePlural} in corso",
       "selectAllLabel": "Seleziona tutto: {resourceNamePlural}",
       "selected": "{selectedItemsCount} selezionati",
@@ -348,7 +349,8 @@
     },
     "Page": {
       "Header": {
-        "rollupActionsLabel": "Visualizza azioni per {title}"
+        "rollupActionsLabel": "Visualizza azioni per {title}",
+        "pageReadyAccessibilityLabel": "{title}. Questa pagina è pronta"
       }
     },
     "FullscreenBar": {

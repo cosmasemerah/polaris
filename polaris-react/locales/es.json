@@ -213,6 +213,7 @@
         "rename": "Cambiar nombre de vista",
         "duplicate": "Duplicar vista",
         "edit": "Editar vista",
+        "editColumns": "Editar columnas",
         "delete": "Eliminar vista",
         "copy": "Copia de {name}",
         "deleteModal": {
@@ -348,7 +349,8 @@
     },
     "Page": {
       "Header": {
-        "rollupActionsLabel": "Ver acciones para {title}"
+        "rollupActionsLabel": "Ver acciones para {title}",
+        "pageReadyAccessibilityLabel": "{title}. Esta página está lista"
       }
     },
     "FullscreenBar": {

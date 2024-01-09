@@ -213,6 +213,7 @@
         "rename": "Döp om vy",
         "duplicate": "Duplicera vy",
         "edit": "Redigera vy",
+        "editColumns": "Redigera kolumner",
         "delete": "Radera vy",
         "copy": "Kopia av {name}",
         "deleteModal": {
@@ -347,7 +348,8 @@
     },
     "Page": {
       "Header": {
-        "rollupActionsLabel": "Visa åtgärder för {title}"
+        "rollupActionsLabel": "Visa åtgärder för {title}",
+        "pageReadyAccessibilityLabel": "{title}. Den här sidan är redo"
       }
     },
     "FullscreenBar": {

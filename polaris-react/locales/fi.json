@@ -213,6 +213,7 @@
         "rename": "Nimeä näkymä uudelleen",
         "duplicate": "Kopioi näkymä",
         "edit": "Muokkaa näkymää",
+        "editColumns": "Muokkaa sarakkeita",
         "delete": "Poista näkymä",
         "copy": "Kopio tiedostosta {name}",
         "deleteModal": {
@@ -347,7 +348,8 @@
     },
     "Page": {
       "Header": {
-        "rollupActionsLabel": "Tarkastele nimikettä {title} koskevia toimintoja"
+        "rollupActionsLabel": "Tarkastele nimikettä {title} koskevia toimintoja",
+        "pageReadyAccessibilityLabel": "{title}. Tämä sivu on valmis"
       }
     },
     "FullscreenBar": {

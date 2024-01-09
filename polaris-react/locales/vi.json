@@ -213,6 +213,7 @@
         "rename": "Đổi tên chế độ xem",
         "duplicate": "Sao chép chế độ xem",
         "edit": "Chỉnh sửa chế độ xem",
+        "editColumns": "Sửa cột",
         "delete": "Xóa chế độ xem",
         "copy": "Bản sao của {name}",
         "deleteModal": {
@@ -347,7 +348,8 @@
     },
     "Page": {
       "Header": {
-        "rollupActionsLabel": "Xem thao tác đối với {title}"
+        "rollupActionsLabel": "Xem thao tác đối với {title}",
+        "pageReadyAccessibilityLabel": "{title}. Trang này đã sẵn sàng"
       }
     },
     "FullscreenBar": {

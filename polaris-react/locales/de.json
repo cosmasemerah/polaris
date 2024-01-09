@@ -213,6 +213,7 @@
         "rename": "Ansicht umbenennen",
         "duplicate": "Ansicht duplizieren",
         "edit": "Ansicht bearbeiten",
+        "editColumns": "Spalten bearbeiten",
         "delete": "Ansicht löschen",
         "copy": "Kopie von {name}",
         "deleteModal": {
@@ -347,7 +348,8 @@
     },
     "Page": {
       "Header": {
-        "rollupActionsLabel": "Aktionen für {title} anzeigen"
+        "rollupActionsLabel": "Aktionen für {title} anzeigen",
+        "pageReadyAccessibilityLabel": "{title}. Diese Seite ist bereit"
       }
     },
     "FullscreenBar": {
