@@ -1,11 +1,13 @@
 import React from 'react';
 import {timer} from '@shopify/jest-dom-mocks';
 import {mountWithApp} from 'tests/utilities';
+import {TickMinor} from '@shopify/polaris-icons';
 
 import {Button} from '../../../../Button';
 import {Toast} from '../Toast';
 import type {ToastProps} from '../Toast';
 import {Key} from '../../../../../types';
+import {Icon} from '../../../../Icon';
 
 interface HandlerMap {
   [eventName: string]: any;
@@ -38,11 +40,25 @@ describe('<Toast />', () => {
     });
   });
 
+  it('renders a Toast with the magic tone when tone is "magic"', () => {
+    const message = mountWithApp(<Toast {...mockProps} tone="magic" />);
+    expect(message).toContainReactComponent('div', {
+      className: 'Toast toneMagic',
+    });
+  });
+
   describe('dismiss button', () => {
     it('renders by default', () => {
       const message = mountWithApp(<Toast {...mockProps} />);
       expect(message).toContainReactComponent('button');
     });
+  });
+
+  it('renders a leading icon if an icon is provided', () => {
+    const message = mountWithApp(
+      <Toast leadingIcon={TickMinor} {...mockProps} />,
+    );
+    expect(message).toContainReactComponent(Icon, {source: TickMinor});
   });
 
   describe('action', () => {
@@ -191,6 +207,40 @@ describe('<Toast />', () => {
       timer.runAllTimers();
 
       expect(spy).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('actionOnComponent', () => {
+    const mockAction = {
+      content: 'Do something',
+      onAction: noop,
+    };
+
+    it('wraps the toast in a button', () => {
+      const message = mountWithApp(
+        <Toast {...mockProps} action={mockAction} actionOnComponent />,
+      );
+
+      expect(message.find('button')).toContainReactText(mockAction.content);
+    });
+
+    it('does not show the content', () => {
+      const message = mountWithApp(
+        <Toast {...mockProps} action={mockAction} actionOnComponent />,
+      );
+      expect(message).not.toContainReactText(mockProps.content);
+    });
+
+    it('triggers action when button is clicked', () => {
+      const spy = jest.fn();
+      const mockActionWithSpy = {...mockAction, onAction: spy};
+      const message = mountWithApp(
+        <Toast {...mockProps} action={mockActionWithSpy} actionOnComponent />,
+      );
+
+      message.find('button')?.trigger('onClick');
+
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });

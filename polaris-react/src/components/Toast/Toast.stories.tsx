@@ -11,6 +11,7 @@ import {
   BlockStack,
   TextContainer,
 } from '@shopify/polaris';
+import {MagicMajor} from '@shopify/polaris-icons';
 
 export default {
   component: Toast,
@@ -212,6 +213,94 @@ export function InsideModal() {
               </BlockStack>
             </Modal.Section>
           </Modal>
+        </Page>
+      </Frame>
+    </div>
+  );
+}
+
+export function Magic() {
+  const [active, setActive] = useState(false);
+
+  const toggleActive = useCallback(() => setActive((active) => !active), []);
+
+  const toastMarkup = active ? (
+    <Toast
+      content="Magic message"
+      onDismiss={toggleActive}
+      tone="magic"
+      duration={3000000}
+    />
+  ) : null;
+
+  return (
+    <div style={{height: '250px'}}>
+      <Frame>
+        <Page title="Default">
+          <Button onClick={toggleActive}>Show Magic Toast</Button>
+          {toastMarkup}
+        </Page>
+      </Frame>
+    </div>
+  );
+}
+
+export function ActionOnComponent() {
+  const [active, setActive] = useState(false);
+
+  const toggleActive = useCallback(() => setActive((active) => !active), []);
+
+  const toastMarkup = active ? (
+    <Toast
+      content=""
+      onDismiss={toggleActive}
+      action={{
+        content: 'Message Toast',
+        onAction: () => {},
+      }}
+      actionOnComponent
+      duration={3000000}
+    />
+  ) : null;
+
+  return (
+    <div style={{height: '250px'}}>
+      <Frame>
+        <Page title="Default">
+          <Button onClick={toggleActive}>Show Magic Toast</Button>
+          {toastMarkup}
+        </Page>
+      </Frame>
+    </div>
+  );
+}
+
+export function MagicActionOnComponent() {
+  const [active, setActive] = useState(false);
+
+  const toggleActive = useCallback(() => setActive((active) => !active), []);
+
+  const toastMarkup = active ? (
+    <Toast
+      content=""
+      onDismiss={toggleActive}
+      tone="magic"
+      action={{
+        content: 'Magic message',
+        onAction: () => {},
+      }}
+      actionOnComponent
+      duration={3000000}
+      leadingIcon={MagicMajor}
+    />
+  ) : null;
+
+  return (
+    <div style={{height: '250px'}}>
+      <Frame>
+        <Page title="Default">
+          <Button onClick={toggleActive}>Show Magic Toast</Button>
+          {toastMarkup}
         </Page>
       </Frame>
     </div>

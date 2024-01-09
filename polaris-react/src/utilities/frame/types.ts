@@ -1,4 +1,4 @@
-import type {Action} from '../../types';
+import type {Action, IconSource} from '../../types';
 
 export interface Logo {
   /** Provides a path for a logo used on a dark background */
@@ -67,6 +67,12 @@ export interface ToastProps {
   onDismiss(): void;
   /** Adds an action next to the message */
   action?: Action;
+  /** Ignores the content and makes the action over the whole Toast */
+  actionOnComponent?: boolean;
+  /** Indicates the tone of the toast */
+  tone?: 'magic';
+  /** Leading icon */
+  leadingIcon?: IconSource;
 }
 
 export interface ToastID {

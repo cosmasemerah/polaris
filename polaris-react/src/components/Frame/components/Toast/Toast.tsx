@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {AlertMinor, CancelSmallMinor} from '@shopify/polaris-icons';
 
-import {classNames} from '../../../../utilities/css';
+import {classNames, variationName} from '../../../../utilities/css';
 import {Key} from '../../../../types';
 import {Button} from '../../../Button';
 import {Icon} from '../../../Icon';
@@ -24,6 +24,9 @@ export function Toast({
   duration,
   error,
   action,
+  tone,
+  actionOnComponent,
+  leadingIcon,
 }: ToastProps) {
   useEffect(() => {
     let timeoutDuration = duration || DEFAULT_TOAST_DURATION;
@@ -67,20 +70,59 @@ export function Toast({
     </div>
   ) : null;
 
-  const leadingIconMarkup = error ? (
-    <div className={styles.LeadingIcon}>
-      <Icon source={AlertMinor} tone="inherit" />
-    </div>
-  ) : null;
+  let leadingIconMarkup;
+  if (error) {
+    leadingIconMarkup = (
+      <div className={styles.LeadingIcon}>
+        <Icon source={AlertMinor} tone="inherit" />
+      </div>
+    );
+  } else if (leadingIcon) {
+    leadingIconMarkup = (
+      <div className={styles.LeadingIcon}>
+        <Icon source={leadingIcon} tone="inherit" />
+      </div>
+    );
+  }
+  const className = classNames(
+    styles.Toast,
+    error && styles.error,
+    tone && styles[variationName('tone', tone)],
+  );
 
-  const className = classNames(styles.Toast, error && styles.error);
+  if (action && actionOnComponent) {
+    return (
+      <button
+        aria-live="assertive"
+        className={classNames(className, styles.WithActionOnComponent)}
+        type="button"
+        onClick={action.onAction}
+      >
+        <KeypressListener keyCode={Key.Escape} handler={onDismiss} />
+        {leadingIconMarkup}
+        <InlineStack gap="400" blockAlign="center">
+          <Text
+            as="span"
+            fontWeight="medium"
+            tone={tone && tone === 'magic' ? 'magic-subdued' : undefined}
+          >
+            {action.content}
+          </Text>
+        </InlineStack>
+      </button>
+    );
+  }
 
   return (
     <div className={className} aria-live="assertive">
       <KeypressListener keyCode={Key.Escape} handler={onDismiss} />
       {leadingIconMarkup}
       <InlineStack gap="400" blockAlign="center">
-        <Text as="span" fontWeight="medium">
+        <Text
+          as="span"
+          fontWeight="medium"
+          tone={tone && tone === 'magic' ? 'magic-subdued' : undefined}
+        >
           {content}
         </Text>
       </InlineStack>
