@@ -1,5 +1,16 @@
 # polaris.shopify.com
 
+## 0.61.10
+
+### Patch Changes
+
+- [#11457](https://github.com/Shopify/polaris/pull/11457) [`966d1901e`](https://github.com/Shopify/polaris/commit/966d1901ece0a199de53d024c329885e86f77b3b) Thanks [@sam-b-rose](https://github.com/sam-b-rose)! - Added fallback to no active icon on Icons page when not a valid icon name is used in the search param
+
+* [#11461](https://github.com/Shopify/polaris/pull/11461) [`d26df7eb0`](https://github.com/Shopify/polaris/commit/d26df7eb08fe18ef6c4bfb5ff8c09e6cfa10e067) Thanks [@sam-b-rose](https://github.com/sam-b-rose)! - Added deprecation warning to old icon names informing users to use the new icon name
+
+* Updated dependencies [[`f1b44ab57`](https://github.com/Shopify/polaris/commit/f1b44ab57d8de2f72b39434d57985f72d204e330)]:
+  - @shopify/polaris@12.11.0
+
 ## 0.61.9
 
 ### Patch Changes

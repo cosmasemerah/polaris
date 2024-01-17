@@ -1,5 +1,11 @@
 # Changelog
 
+## 12.11.0
+
+### Minor Changes
+
+- [#11412](https://github.com/Shopify/polaris/pull/11412) [`f1b44ab57`](https://github.com/Shopify/polaris/commit/f1b44ab57d8de2f72b39434d57985f72d204e330) Thanks [@mrcthms](https://github.com/mrcthms)! - [TextField] Updated the TextField with new `autoSize` and `loading` props
+
 ## 12.10.0
 
 ### Minor Changes
